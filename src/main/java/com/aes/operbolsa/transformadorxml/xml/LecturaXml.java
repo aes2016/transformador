@@ -5,7 +5,7 @@
  */
 package com.aes.operbolsa.transformadorxml.xml;
 
-import com.aes.operbolsa.modelo.inversor.bolsa.Accion;
+import com.aes.operbolsa.modelo.bolsa.Accion;
 import com.aes.operbolsa.modelo.inversor.Inversor;
 import java.io.File;
 import javax.xml.bind.JAXBContext;
