@@ -7,7 +7,7 @@ package com.aes.operbolsa.transformadorxml.xml;
 
 import com.aes.operbolsa.modelo.bolsa.Accion;
 import com.aes.operbolsa.modelo.inversor.Inversor;
-import static com.aes.operbolsa.transformadorxml.xml.utilidades.Propiedades.getPropiedad;
+import static com.aes.operbolsa.transformadorxml.xml.utilidades.Utilidades.getPropiedad;
 import java.io.File;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
@@ -18,8 +18,8 @@ import javax.xml.bind.Unmarshaller;
  */
 public class LecturaXml {
     
-    private final String rutaXMLInversor = getPropiedad("rutaXmlInversor") ;
-    private final String rutaXMLBolsa = getPropiedad("rutaXmlBolsa") ;
+    private static final String rutaXMLInversor = getPropiedad("rutaXmlInversor") ;
+    private static final String rutaXMLBolsa = getPropiedad("rutaXmlBolsa") ;
     
     
     public static Object transformadorXML(Class<?> clase, String nombreArchivo){
@@ -32,8 +32,7 @@ public class LecturaXml {
             return claseTransformada;
         
         } catch (Exception e) {
-            System.out.println("Error procesado XML por favor validar la estructura");
-            e.printStackTrace();
+            System.out.println("Error procesado XML por favor validar la estructura :"+e.getMessage() );
         }
         return null;
     }

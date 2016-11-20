@@ -10,12 +10,14 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
  * @author root
  */
-public class Propiedades {
+public class Utilidades {
     
        
     public static String getPropiedad(String propiedad){
@@ -43,5 +45,16 @@ public class Propiedades {
         return valor;
     }
     
+   
+    
+    public static boolean evaluarExpresionRegular(String expresion, String cadena){
+        boolean coincide = false;
+        Pattern pat = Pattern.compile(expresion);
+        Matcher mat = pat.matcher(cadena);
+        if (mat.matches()) {
+            coincide = true;
+        }         
+        return coincide;
+    }
     
 }
