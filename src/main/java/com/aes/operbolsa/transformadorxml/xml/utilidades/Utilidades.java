@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 
 /**
  *
- * @author root
+ * @author LBVP
  */
 public class Utilidades {
     

@@ -18,8 +18,8 @@ import javax.xml.bind.Unmarshaller;
  */
 public class LecturaXml {
     
-    private static final String rutaXMLInversor = getPropiedad("rutaXmlInversor") ;
-    private static final String rutaXMLBolsa = getPropiedad("rutaXmlBolsa") ;
+    public static final String rutaXMLInversor = getPropiedad("rutaXmlInversor") ;
+    public static final String rutaXMLBolsa = getPropiedad("rutaXmlBolsa") ;
     
     
     public static Object transformadorXML(Class<?> clase, String nombreArchivo){

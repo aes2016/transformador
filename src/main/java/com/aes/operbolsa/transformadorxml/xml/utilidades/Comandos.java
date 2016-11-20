@@ -5,51 +5,63 @@
  */
 package com.aes.operbolsa.transformadorxml.xml.utilidades;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
- * @author root
+ * @author LBVP
  */
-public abstract class Comandos {
+public abstract class Comandos <T> {
 
     protected String host;
     protected String puerto;
+    protected List<String> posiblesComandosRegex = new ArrayList<String>() ;
     protected String comando;
     protected boolean comandoValido;
+    protected T entidadOperaciones;
 
-    public Comandos(String comando) {
+    protected Comandos(String comando) {
         this.comando = comando;
+        cargarListaPosiblesComandos();
     }
+    
+    public abstract boolean validarComando();
+    
+    public abstract T getComandoConexion();
+    
+    public abstract T getComandoOperacion();
+    
+    public abstract void cargarListaPosiblesComandos();
 
-    abstract boolean validarComando();
-    
-    abstract boolean getComandoConexion();
-    
-    abstract boolean getComandoOperacion();
-
     
     
-    protected String getHost() {
+    public String getHost() {
         return host == null ? "" : host;
     }
 
-    protected void setHost(String host) {
+    public void setHost(String host) {
         this.host = host;
     }
 
-    protected String getPuerto() {
+    public String getPuerto() {
         return puerto == null ? "" : puerto;
     }
 
-    protected void setPuerto(String puerto) {
+    public void setPuerto(String puerto) {
         this.puerto = puerto;
     }
 
-    protected String getComando() {
+    public String getComando() {
         return comando;
     }
 
-    protected void setComando(String comando) {
+    public void setComando(String comando) {
         this.comando = comando;
+    }
+
+    public List<String> getPosiblesComandosRegex() {
+        return posiblesComandosRegex ;
     }
     
 
