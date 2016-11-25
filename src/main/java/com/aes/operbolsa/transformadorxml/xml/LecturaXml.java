@@ -7,7 +7,7 @@ package com.aes.operbolsa.transformadorxml.xml;
 
 import com.aes.operbolsa.modelo.bolsa.Accion;
 import com.aes.operbolsa.modelo.inversor.Inversor;
-import static com.aes.operbolsa.transformadorxml.xml.utilidades.Utilidades.getPropiedad;
+import static com.aes.utilidades.Utilidades.getPropiedad;
 import java.io.File;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
